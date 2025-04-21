@@ -125,7 +125,7 @@ async def on_message(message: discord.Message):
             for member in message.channel.members:
                 if (not member.bot and
                     member != message.author and
-                    member.status in [discord.Status.online, discord.Status.idle, discord.Status.dnd]):
+                    member.status in [discord.Status.online, discord.Status.idle, discord.Status.dnd, discord.Status.offline]):
                     eligible_members.append(member)
         except Exception as e:
             print(f"Error retrieving members in '{message.channel.name}': {e}")
