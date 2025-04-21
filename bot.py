@@ -94,12 +94,7 @@ async def on_ready():
     print('Bot is ready and listening for mentions!')
     print('------')
 
-    # Using Custom Activity
-    custom_activity = discord.CustomActivity(
-        name="I'm probably broken...",  # Your custom text here
-        emoji="😱"                # Your emoji here (Unicode works directly)
-    )
-    await bot.change_presence(status=discord.Status.idle, activity=custom_activity) # Set custom activity here
+    await bot.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="for pings"))
 
 @bot.event
 async def on_message(message: discord.Message):
